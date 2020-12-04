@@ -8,7 +8,7 @@
 // src/App.js
 
 import React, { Component } from 'react'
-// 1)
+// 1) Imports the Dice component into the Board component.
 import Dice from './Dice'
 import Log from './Log'
 
@@ -42,14 +42,14 @@ class Board extends Component{
     this.setState({ currentPic: newRoll, diceLog: [... diceLog, newRoll] })
   }
 
-  // 7)
+  // 7) This method will display everything on the webpage
   render(){
     const { currentPic, diceLog } = this.state
     return(
       <div id="board-container">
-        // 8)
+        // 8) calling and rendering the dice component   
         <Dice
-          // 9)
+          // 9) By calling on this.handleRoll, user will be able to see this function of the webpage
           roll={ this.handleRoll }
           currentPic={ currentPic }
         />
@@ -61,5 +61,5 @@ class Board extends Component{
   }
 }
 
-// 10)
+// 10) Exports the Board component and allows for it to be imported in the parent App.js file.
 export default Board
